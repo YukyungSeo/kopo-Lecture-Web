@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- url 방식 -->
+<!-- <script src="http://localhost:9999/Lecture-Web/jquery/js/jquery-3.6.0.js"></script> -->
+<!-- uri 방식 -->
+<!-- <script src="/Lecture-Web/jquery/js/jquery-3.6.0.min.js"></script> -->
+<!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+<!-- CDN 사용 -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+//	window.onload = function () {
+//		document.write("hello");
+//		alert("hi");
+//	}
+//	
+//	// 덮어쓰기 됨
+//	window.onload = function() {
+//		document.write("good!!!");
+//	}
+
+	// 위 긴 코드를 대체
+	$(document).ready(function () {
+		// 매개변수 인자로 함수를 넘기는 것을 콜백함수라고 한다.
+		alert('hello');
+	});
+	// 함수 둘다 실행된다. 그러나 hello 다음에 ready가 실행된다는 보장은 없다.
+	$(document).ready(function () {
+		alert('ready');
+	});
+
+	// $(document).ready()만 아래와 같이 축약하여 쓸 수 있음
+	$(function() {
+		alert('ready2..');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

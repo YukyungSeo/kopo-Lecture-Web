@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// 아래의 여러 h1의 이벤트들을 묶을 수 있음
+		// 여기선 hover는 안됨
+		$('h1').on({
+			click : function() {
+				$(this).css('color', 'red');
+			}, 'mouseenter' : function() {
+				$(this).css('background-color', 'yellow');
+			}, mouseleave : function() {
+				$(this).css('background-color', 'white');				
+			}
+		})
+		
+		/*
+		$('h1').click(function() {
+			$(this).css('color', 'red');
+		})
+		
+		// 아래 mouseenter, mouseleave를 hover로 묶을 수 있다.
+		$('h1').hover(function() {
+			console.log('enter');
+			$(this).css('background-color', 'lightgray');
+		}, function() {
+			console.log('leave');
+			$(this).css('background-color', 'white');			
+		})
+		*/
+		
+		/*
+		$('h1').mouseenter(function(){
+			$(this).css('background-color', 'lightgray');
+		})
+		
+		$('h1').mouseleave(function(){
+			$(this).css('background-color', 'white');
+		})
+		*/
+	});
+</script>
+</head>
+<body>
+	<h1>첫번째 문장</h1>
+	<h1>두번째 문장</h1>
+	<h1>세번째 문장</h1>
+</body>
+</html>

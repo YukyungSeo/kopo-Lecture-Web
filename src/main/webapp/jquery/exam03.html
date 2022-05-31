@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+	$(document).ready(function(){
+		/*
+		let pTags = document.getElementsByTagName("p")
+		let html = pTags[0].innerHTML
+		let text = pTags[0].innerText
+		*/
+		
+		// html은 1개만 가져온다.
+		let html = $('p').html()
+		// text는  2개 다 가져온다.
+		let text = $('p').text()
+		let attr = $('a').attr('href')
+		
+		// text는 tag를 제거하고 문자만 읽어옮
+		alert('html : ' + html + '\ntext : ' + text + '\n주소 : ' + attr);
+		
+		/* pTags[1].innerText = '<mark>GOOD</mark>'; */
+		
+		$('#btn01').click(function() {
+			/* alert('hello') */
+			let name = $('#name').val()
+			alert('name : ' + name);
+		})
+		
+		$('#btn02').click(function(){
+			$('a').attr('href', 'http://www.daum.net');
+		})
+		
+		$('#btn03').click(function(){
+			// $('p').html('<mark>문장변환</mark>');
+			// function은 p 테그의 갯수만큼 호출된다.
+			$('p').html(function(index, element) {
+				console.log(arguments);
+				console.log(index, element);
+				return '<mark>' + index + ':' + element + '</mark>'
+			})
+		})
+	});
+</script>
+</head>
+<body>
+	<p>
+		내 이름은 <b>홍길동</b>이고, 별명은 <i>의적</i>입니다.
+	</p>
+	<p>
+		내 이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다. 
+	</p>
+	이름 : <input type="text" id="name"><button id="btn01">입력완료</button>
+	
+	<a href="http://www.naver.com">사이트로 이동</a><button id="btn02">주소변경</button>
+	<button id="btn03">문장변환</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1 {
+		display : none;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		/* alert("hello"); */
+		/* let h1Tag = document.getElementsByTagName("h1")[0];
+		h1Tag.setAttribute("style", "display:block"); */
+		
+		/* $("h1").show(3000);
+		$("h1").hide(3000);
+		$("h1").show('slow');
+		$("h1").hide('fast');
+		$("h1").fadeIn(5000);
+		$("h1").slideDown(5000); */
+		
+		// 3초에 "Hello JQUERY" 문장을 보인 후, 글자색을 파란색으로 변경한 후,
+		// 슬라이드 효과로 올라갔다 내려갔다를 수행한 후, 배경색을 노란색, 글자색은 빨간색으로 변경
+		
+		// .show( [duration ] [, complete ] )
+		// complete는 옵션으로 해당위치에 함수를 넘겨주면, show가 끝난 후 해당 함수가 수행된다. 
+		$('h1').show(3000, function(){
+			$(this).css('color', 'blue');
+			$(this).slideUp(1000).slideDown(1000, function(){
+				/* $(this).css('background-color', 'yellow').css('color', 'red'); */
+				$(this).css({
+					color : 'red',
+					'background-color' : 'yellow'
+				})
+			});
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<h1>Hello JQUERY</h1>
+</body>
+</html>
